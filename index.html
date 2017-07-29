@@ -1,0 +1,133 @@
+<html>
+<head>
+  <title>Project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/js/mdb.min.js"></script>
+  <script src="js/myScript.js"></script>
+</head>
+<body>
+  <div id="dialog-form"></div>
+  <div id="contact" class="container-fluid2 content-block-one">
+    <div class="row">
+      <div class="col-sm-12">
+        <form class="form-horizontal" method="post" action="getcomment.php">
+          <fieldset>
+            <div class="md-form">
+              <div class="col-md-6 ">
+                <input id="fname" name="fname" type="text" placeholder="First Name" class="form-control">
+              </div>
+              <div class="col-md-6 ">
+                <input id="lname" name="lname" type="text" placeholder="Last Name" class="form-control">
+              </div>
+            </div>
+            <div class="md-form">
+              <div class="col-md-6 ">
+                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
+              </div>
+              <div class="col-md-6 ">
+                <input id="phone" name="phone" type="text" placeholder="Phone Number" class="form-control">
+              </div>
+            </div>
+            <div class="md-form col-md-6 sel">
+              <select class="form-control sel" id="selection" name="options">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="None">None</option>
+                <option value="eAgent">eAgent</option>
+                <option value="iArts">iArts</option>
+                <option value="Orbit">Orbit</option>
+                <option value="G&G">G&G</option>
+                <option value="EstateWeb">EstateWeb</option>
+                <option value="Global">Globalc</option>
+              </select>
+            </div>
+            <div class="md-form">
+              <div class="col-md-12">
+                <textarea class="form-control" id="comment" name="comment" placeholder="Comment" rows="7"></textarea>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+        <div class="col-md-12 text-center">
+          <button type="button" id="SB" class="btn btn-primary btn-lg">Submit</button>
+        </div>
+        <div id="disp_data">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div id="disp_data"></div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Update Section</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" method="post" action="getcomment.php">
+              <fieldset>
+                <div class="md-form">
+                  <div class="col-md-6 ">
+                    <input id="fname1" name="fname" type="text" placeholder="First Name" value="" class="form-control"  required>
+                  </div>
+                  <div class="col-md-6 ">
+                    <input id="lname1" name="lname" type="text" placeholder="Last Name" class="form-control">
+                  </div>
+                </div>
+                <div class="md-form">
+                  <div class="col-md-6 ">
+                    <input id="email1" name="email" type="text" placeholder="Email Address" class="form-control">
+                  </div>
+                  <div class="col-md-6 ">
+                    <input id="phone1" name="phone" type="text" placeholder="Phone Number" class="form-control">
+                  </div>
+                </div>
+                <div class="md-form col-md-6 sel">
+                  <select class="form-control sel" id="selection1" name="options">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="None">None</option>
+                    <option value="eAgent">eAgent</option>
+                    <option value="iArts">iArts</option>
+                    <option value="Orbit">Orbit</option>
+                    <option value="G&G">G&G</option>
+                    <option value="EstateWeb">EstateWeb</option>
+                    <option value="Global">Globalc</option>
+                  </select>
+                </div>
+
+                <div class="md-form">
+                  <div class="col-md-12">
+                    <textarea class="form-control" id="comment1" name="comment" placeholder="Comment" rows="7"></textarea>
+                  </div>
+                </div>
+
+                <div class="md-form">
+
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" id="update" data-dismiss="modal">Save</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+  </html>
